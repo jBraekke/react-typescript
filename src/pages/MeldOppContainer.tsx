@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Gateway from '../logic/gateway';
+import MeldOppCard from '../components/MeldOppCard';
 
 type Klasse = {
     id: number,
@@ -32,12 +33,7 @@ class MeldOppContainer extends Component<{}, { klasser: Array<Klasse> }> {
 
     render() {
         return <>
-            <p>Her kommer klassene:</p>
-            <select className="klasser">
-                {this.state.klasser.map((klasse: Klasse, index) => {
-                    return <option key={index} value={klasse.id}>{klasse.navn}</option>
-                })}
-            </select>
+            <MeldOppCard klasser={this.state.klasser}/>
         </>
     }
 }
